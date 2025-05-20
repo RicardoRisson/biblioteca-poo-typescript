@@ -4,15 +4,9 @@ export class Emprestimo {
   
   constructor(
     public livro: string,
-    public dataEmprestimo: Date,
     public dataDevolucao: Date
-  ) {}
-  
-  constructor(
-      public livro: Livro,
-      public usuario: Usuario
   ) {
-      this.dataEmprestimo = new Date();
+    this.dataEmprestimo = new Date();
   }
 
   realizarEmprestimo(): string {
@@ -23,8 +17,4 @@ export class Emprestimo {
           return `Erro: o livro "${this.livro.titulo}" já está emprestado.`;
       }
   }
-}
-
-class Emprestimo {
-    
 }
