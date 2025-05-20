@@ -2,7 +2,10 @@
 class Livro {
     private emprestado: boolean = false;
 
-    constructor(public titulo: string, public autor: Autor) {}
+    constructor(
+        public titulo: string,
+        public autor: Autor
+    ) {}
 
     verificarDisponibilidade(): boolean {
         return !this.emprestado;
