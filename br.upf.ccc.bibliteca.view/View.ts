@@ -1,5 +1,7 @@
 import { Usuario } from "../br.upf.ccc.bibliteca.model/Usuario";
 import { Emprestimo } from "../br.upf.ccc.bibliteca.model/Emprestimo";
+import { Autor } from "../br.upf.ccc.bibliteca.model/Autor";
+import { Livro } from "../br.upf.ccc.bibliteca.model/Livro";
 
 export class View {
   static mostrarEmprestimos(usuario: Usuario): void {
@@ -16,13 +18,19 @@ export class View {
   static testeTerminal(): void {
     const usuario = new Usuario("Ricardo", "ricardo@example.com");
 
+    const autor1 = new Autor("J.R.R. Tolkien", "tolkien@example.com");
+    const autor2 = new Autor("George Orwell", "orwell@example.com");
+
+    const livro1 = new Livro("O Senhor dos Anéis", autor1);
+    const livro2 = new Livro("1984", autor2);
+
     usuario.emprestimos.push(
       new Emprestimo(
-        "O Senhor dos Anéis",
+        livro1,
         new Date("2025-05-01"),
         new Date("2025-05-10")
       ),
-      new Emprestimo("1984", new Date("2025-05-05"), new Date("2025-05-15"))
+      new Emprestimo(livro2, new Date("2025-05-05"), new Date("2025-05-15"))
     );
 
     this.mostrarEmprestimos(usuario);
