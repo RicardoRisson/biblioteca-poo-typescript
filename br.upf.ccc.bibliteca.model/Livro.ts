@@ -1,5 +1,6 @@
-// Livro associado a um autor
-class Livro {
+import { Autor } from "./Autor";
+
+export class Livro {
     private emprestado: boolean = false;
 
     constructor(
