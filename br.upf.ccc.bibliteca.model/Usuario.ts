@@ -15,7 +15,7 @@ export class Usuario extends Pessoa {
     return this.emprestimos.map(
       (e, i) =>
         `${i + 1} - Livro: ${
-          e.livro
+          e.livro.titulo
         } | Data Empréstimo: ${e.dataEmprestimo.toLocaleDateString()} | Data Devolução: ${e.dataDevolucao.toLocaleDateString()}`
     );
   }
