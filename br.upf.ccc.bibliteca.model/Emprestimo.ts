@@ -1,3 +1,5 @@
+import { Livro } from "./Livro";
+
 export class Emprestimo { 
   constructor(
     public livro: Livro,
