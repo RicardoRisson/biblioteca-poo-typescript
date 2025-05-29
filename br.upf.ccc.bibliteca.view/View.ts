@@ -5,8 +5,8 @@ import { Livro } from "../br.upf.ccc.bibliteca.model/Livro";
 
 export class View {
   static mostrarEmprestimos(usuario: Usuario): void {
-    console.log(`\nEmpréstimos de ${usuario.nome}:`);
-    const lista = usuario.listarEmprestimos();
+    console.log(`\n=====================`);
+    const lista = usuario.listarEmprestimos(); //Exemplo da Substituição
     lista.forEach((item) => console.log(item));
   }
 
@@ -16,25 +16,39 @@ export class View {
   }
 
   static testeTerminal(): void {
-    const usuario = new Usuario("Ricardo", "ricardo@example.com");
+    const usuario1 = new Usuario("Ricardo", "ricardo@example.com");
+    const usuario2 = new Usuario("Octavio", "octavio@example.com");
 
     const autor1 = new Autor("J.R.R. Tolkien", "tolkien@example.com");
     const autor2 = new Autor("George Orwell", "orwell@example.com");
+    const autor3 = new Autor("Machado de Assis", "machado@example.com", "Considerado um dos maiores escritores brasileiros.");
 
     const livro1 = new Livro("O Senhor dos Anéis", autor1);
     const livro2 = new Livro("1984", autor2);
+    const livro3 = new Livro("O Senhor dos Anéis: O reencontro", autor1);
+    const livro4 = new Livro("Dom Casmurro", autor3);
 
-    usuario.emprestimos.push(
-      new Emprestimo(
-        livro1,
-        new Date("2025-05-01"),
-        new Date("2025-05-10")
-      ),
-      new Emprestimo(livro2, new Date("2025-05-05"), new Date("2025-05-15"))
-    );
 
-    this.mostrarEmprestimos(usuario);
-    this.mostrarMulta(usuario);
+    const { mensagem: msg1, emprestimo: emp1 } = Emprestimo.realizarEmprestimo(livro2, new Date(2025, 5, 5), new Date(2025, 6, 20)); // janeiro começa no 0
+    console.log(msg1);
+    if(emp1) usuario1.emprestimos.push(emp1);
+
+    const { mensagem: msg2, emprestimo: emp2 } = Emprestimo.realizarEmprestimo(livro1, new Date(2025, 5, 15), new Date(2025, 6, 2));
+    console.log(msg2);
+    if(emp2) usuario2.emprestimos.push(emp2);
+
+    const { mensagem: msg3, emprestimo: emp3 } = Emprestimo.realizarEmprestimo(livro3, new Date(2025, 4, 22), new Date(2025, 4, 23));
+    console.log(msg3);
+    if(emp3) usuario2.emprestimos.push(emp3);
+
+    const { mensagem: msg4, emprestimo: emp4 } = Emprestimo.realizarEmprestimo(livro4, new Date(2025, 4, 22), new Date(2025, 4, 23));
+    console.log(msg4);
+    if(emp4) usuario2.emprestimos.push(emp4);
+    
+    this.mostrarEmprestimos(usuario1);
+    this.mostrarMulta(usuario1);
+    this.mostrarEmprestimos(usuario2);
+    this.mostrarMulta(usuario2);
   }
 }
 
