@@ -8,16 +8,24 @@ export class Usuario extends Pessoa {
     super(nome, email);
   }
 
+  //Exemplo para a Substituição
+  override apresentar(): string {
+  return `Usuário: ${this.nome} | Email: ${this.email} | Empréstimos: ${this.emprestimos.length}`;
+  }
+
   listarEmprestimos(): string[] {
+    const cabecalho = this.apresentar(); // usa o método da classe Pessoa
     if (this.emprestimos.length === 0) {
       return ["Nenhum empréstimo registrado."];
     }
-    return this.emprestimos.map(
-      (e, i) =>
-        `${i + 1} - Livro: ${
-          e.livro.titulo
-        } | Data Empréstimo: ${e.dataEmprestimo.toLocaleDateString()} | Data Devolução: ${e.dataDevolucao.toLocaleDateString()}`
+    const lista = this.emprestimos.map(
+    (e, i) =>
+      `${i + 1} - Livro: ${
+        e.livro.titulo
+      } | Data Empréstimo: ${e.dataEmprestimo.toLocaleDateString()} | Data Devolução: ${e.dataDevolucao.toLocaleDateString()}`
     );
+    
+    return [cabecalho, ...lista]; // inclui a apresentação antes da lista
   }
 
   verificarMulta(): number {
