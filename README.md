@@ -5,12 +5,14 @@ Este é um sistema simples de gerenciamento de biblioteca desenvolvido em **Type
 ---
 
 ## 👥 Integrantes
+
 - Ricardo
 - Otávio
 
 ---
 
 ## 🎯 Objetivo
+
 Criar um sistema orientado a objetos para gerenciar uma biblioteca, permitindo:
 
 - Cadastro de usuários e autores.
@@ -71,5 +73,5 @@ Usuário: Octavio | Email: octavio@example.com | Empréstimos: 3
 2 - Livro: O Senhor dos Anéis: O reencontro | Data Empréstimo: 22/05/2025 | Data Devolução: 23/05/2025
 3 - Livro: Dom Casmurro | Data Empréstimo: 22/05/2025 | Data Devolução: 23/05/2025
 
-Multa total: R$ 15.00
+Multa total: R$ 19.50
 ```
