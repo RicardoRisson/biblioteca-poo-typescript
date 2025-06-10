@@ -58,8 +58,17 @@ npx ts-node ./br.upf.ccc.bibliteca.view/View.ts
 ```bash
 Empréstimo realizado com sucesso para o livro "1984".
 Empréstimo realizado com sucesso para o livro "O Senhor dos Anéis".
-Empréstimo realizado com sucesso para o livro "O Senhor dos Anéis: O reencontro".
+Empréstimo realizado com sucesso para o livro "O Hobbit".
 Empréstimo realizado com sucesso para o livro "Dom Casmurro".
+
+======= Catálogo de Livros =======
+
+Título: O Senhor dos Anéis | Autor: J.R.R. Tolkien | Biografia: undefined | Disponível: false
+Título: 1984 | Autor: George Orwell | Biografia: undefined | Disponível: false
+Título: O Hobbit | Autor: J.R.R. Tolkien | Biografia: undefined | Disponível: true
+Título: Dom Casmurro | Autor: Machado de Assis | Biografia: Considerado um dos maiores escritores brasileiros. | Disponível: true
+
+======= Usuários e Empréstimos =======
 
 =====================
 Usuário: Ricardo | Email: ricardo@example.com | Empréstimos: 1
@@ -69,9 +78,9 @@ Multa total: R$ 0.00
 
 =====================
 Usuário: Octavio | Email: octavio@example.com | Empréstimos: 3
-1 - Livro: O Senhor dos Anéis | Data Empréstimo: 15/06/2025 | Data Devolução: 02/07/2025
-2 - Livro: O Senhor dos Anéis: O reencontro | Data Empréstimo: 22/05/2025 | Data Devolução: 23/05/2025
-3 - Livro: Dom Casmurro | Data Empréstimo: 22/05/2025 | Data Devolução: 23/05/2025
+1 - Livro: O Senhor dos Anéis | Data Empréstimo: 01/03/2025 | Data Devolução: 21/07/2025
+2 - Livro: O Hobbit | Data Empréstimo: 22/05/2025 | Data Devolução: 23/05/2025
+3 - Livro: Dom Casmurro | Data Empréstimo: 22/05/2025 | Data Devolução: 23/06/2025
 
-Multa total: R$ 19.50
+Multa total: R$ 18.00
 ```
