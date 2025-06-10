@@ -19,6 +19,7 @@ export class View {
     const usuario1 = new Usuario("Ricardo", "ricardo@example.com");
     const usuario2 = new Usuario("Octavio", "octavio@example.com");
 
+    
     const autor1 = new Autor("J.R.R. Tolkien", "tolkien@example.com");
     const autor2 = new Autor("George Orwell", "orwell@example.com");
     const autor3 = new Autor(
@@ -29,8 +30,9 @@ export class View {
 
     const livro1 = new Livro("O Senhor dos Anéis", autor1);
     const livro2 = new Livro("1984", autor2);
-    const livro3 = new Livro("O Senhor dos Anéis: O reencontro", autor1);
+    const livro3 = new Livro("O Hobbit", autor1);
     const livro4 = new Livro("Dom Casmurro", autor3);
+    const livros = [livro1, livro2, livro3, livro4];
 
     const { mensagem: msg1, emprestimo: emp1 } = Emprestimo.realizarEmprestimo(
       livro2,
@@ -42,8 +44,8 @@ export class View {
 
     const { mensagem: msg2, emprestimo: emp2 } = Emprestimo.realizarEmprestimo(
       livro1,
-      new Date(2025, 5, 15),
-      new Date(2025, 6, 2)
+      new Date(2025, 1, 29),
+      new Date(2025, 6, 21)
     );
     console.log(msg2);
     if (emp2) usuario2.emprestimos.push(emp2);
@@ -62,14 +64,20 @@ export class View {
     const { mensagem: msg4, emprestimo: emp4 } = Emprestimo.realizarEmprestimo(
       livro4,
       new Date(2025, 4, 22),
-      new Date(2025, 4, 23)
+      new Date(2025, 5, 23)
     );
     console.log(msg4);
     if (emp4) {
-      emp4.registrarDevolucao(new Date(2025, 5, 5)); // devolvido com atraso
+      emp4.registrarDevolucao(new Date(2025, 6, 5)); // devolvido com atraso e gerou multa
       usuario2.emprestimos.push(emp4);
     }
 
+    console.log("\n======= Catálogo de Livros =======\n");
+    livros.forEach((livro) => {
+      console.log(`Título: ${livro.titulo} | Autor: ${livro.autor.nome} | Biografia: ${livro.autor.biografia} | Disponível: ${livro.verificarDisponibilidade()}`);
+    });
+
+    console.log("\n======= Usuários e Empréstimos =======");
     this.mostrarEmprestimos(usuario1);
     this.mostrarMulta(usuario1);
     this.mostrarEmprestimos(usuario2);
