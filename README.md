@@ -6,8 +6,8 @@ Este é um sistema simples de gerenciamento de biblioteca desenvolvido em **Type
 
 ## 👥 Integrantes
 
-- Ricardo
-- Otávio
+- Ricardo Risson Machado - 202393
+- Octavio Francisco Petry Bortoluzzi - 188380
 
 ---
 
